@@ -10,27 +10,71 @@
     }
     
     h1 {
-      font-size: 48px;
+      font-size: 72px;
       color: #333;
       margin-top: 100px;
       position: relative;
       animation-name: slide-in;
       animation-duration: 1s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+      transform-origin: 50% 50%;
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .letter {
+      display: inline-block;
+      transform: rotate(0deg);
+      animation-name: rotate;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    
+    .smiley {
+      font-size: 72px;
+      margin-left: 10px;
     }
     
     @keyframes slide-in {
       from {
         left: -100%;
+        opacity: 0;
       }
       
       to {
         left: 0;
+        opacity: 1;
+      }
+    }
+    
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      
+      to {
+        transform: rotate(360deg);
       }
     }
   </style>
 </head>
 <body>
-  <h1>Hello, World!</h1>
+  <h1>
+    <span class="letter">H</span>
+    <span class="letter">e</span>
+    <span class="letter">l</span>
+    <span class="letter">l</span>
+    <span class="letter">o</span>
+    <span class="letter">,</span>
+    <br>
+    <span class="letter">W</span>
+    <span class="letter">o</span>
+    <span class="letter">r</span>
+    <span class="letter">l</span>
+    <span class="letter">d</span>
+    <span class="smiley">&#x1F600;</span>
+  </h1>
 </body>
 </html>
 
