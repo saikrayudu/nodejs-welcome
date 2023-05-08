@@ -1,6 +1,7 @@
 var express = require('express');
 var os = require("os");
 var cors = require('cors');
+const path = require('path');
 const PORT = 8080;
 const app = express();
 console.log(process.env)
@@ -8,7 +9,7 @@ console.log(process.env)
 var healthy=true;
 
 app.get('/', function (req, res) {
-  res.sendFile('index.html');
+  res.sendFile(path.join(__dirname+'/index.html'));
 });
 
 app.get('/healthz', function (req, res) {
