@@ -8,7 +8,7 @@ console.log(process.env)
 var healthy=true;
 
 app.get('/', function (req, res) {
-  res.send('Hello world from ZelarHub '+ os.hostname() + '\n');
+  res.sendFile('index.html');
 });
 
 app.get('/healthz', function (req, res) {
